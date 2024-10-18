@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tinker Template</title>
     <link rel="stylesheet" href="asset/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="hero">
@@ -71,16 +72,147 @@
                     <li><a href="#">Animation</a></li>
                 </ul>
             </div>
-            <div class="gallery-grid">
-                <img src="asset/img/portfolio_item_01.jpg" alt="Gallery Image 1">
-                <img src="asset/img/portfolio_item_02.jpg" alt="Gallery Image 2">
-                <img src="asset/img/portfolio_item_03.jpg" alt="Gallery Image 3">
-                <img src="asset/img/portfolio_item_04.jpg" alt="Gallery Image 4">
-                <img src="asset/img/portfolio_item_05.jpg" alt="Gallery Image 5">
-                <img src="asset/img/portfolio_item_06.jpg" alt="Gallery Image 6">
+            <div class="gallery-part">
+                <div class="gallery-grid">
+                    <img src="asset/img/portfolio_item_01.jpg" alt="Gallery Image 1">
+                    <img src="asset/img/portfolio_item_02.jpg" alt="Gallery Image 2">
+                    <img src="asset/img/portfolio_item_03.jpg" alt="Gallery Image 3">
+                    <img src="asset/img/portfolio_item_04.jpg" alt="Gallery Image 4">
+                    <img src="asset/img/portfolio_item_05.jpg" alt="Gallery Image 5">
+                    <img src="asset/img/portfolio_item_06.jpg" alt="Gallery Image 6">
+                </div>
             </div>
         </section>
 
+        <!-- carousel -->
+
+        <section class="carousel-container">
+                <div class="carousel">
+                  <div class="carousel-item active">
+                    <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in tortor ultricies, facilisis lorem id, consectetur libero.”</p>
+                  </div>
+              
+                  <div class="carousel-item">
+                    <p>“Quisque ut ligula venenatis, euismod risus vel, consequat lacus. In ut purus id felis euismod cursus. Praesent in pulvinar arcu.”</p>
+                  </div>
+              
+                  <div class="carousel-item">
+                    <p>“Vivamus placerat velit vitae libero vestibulum, et fringilla mauris gravida. Integer vehicula libero nec efficitur vestibulum.”</p>
+                  </div>
+              
+                  <div class="carousel-item">
+                    <p>“Mauris non dui justo. Nulla id ornare mi, et commodo massa. Ut fringilla eros in mi volutpat cursus.”</p>
+                  </div>
+
+                  <div class="carousel-mention">
+                    <h4>Richard Beal</h4>
+                    <p>CSS Developer</p>
+                  </div>
+              
+                  <div class="carousel-indicators">
+                    <span class="indicator active" onclick="showSlide(0)"></span>
+                    <span class="indicator" onclick="showSlide(1)"></span>
+                    <span class="indicator" onclick="showSlide(2)"></span>
+                    <span class="indicator" onclick="showSlide(3)"></span>
+                  </div>
+                </div>
+              
+            <script>
+                let currentSlide = 0;
+              
+                function showSlide(index) {
+                  const slides = document.querySelectorAll('.carousel-item');
+                  const indicators = document.querySelectorAll('.indicator');
+              
+                  slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    indicators[i].classList.remove('active');
+                    if (i === index) {
+                      slide.classList.add('active');
+                      indicators[i].classList.add('active');
+                    }
+                  });
+              
+                  currentSlide = index;
+                }
+            </script>
+        </section>
+
+        <!-- our blog post -->
+
+        <section class="blog-section">
+            <div class="blog-posts">
+              <h2>Our Blog Posts</h2>
+              <hr />
+              <h3>chia hot chicken la croix ugh dreamcatcher man bun squid vaporwave kinfolk</h3>
+              <ul>
+                <li><a href="#">Lorem Ipsum Dolor Sit</a></li>
+                <li><a href="#">Quisque Ultricies Maximus</a></li>
+                <li><a href="#">Sed Vel Elit Et Lorem</a></li>
+                <li><a href="#">Vivamus Purus Neque</a></li>
+              </ul>
+            </div>
+          
+            <div class="blog-content">
+              <img src="asset/img/blog_item_01.jpg" alt="Blog Image">
+              <div class="blog-info">
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p class="meta">
+                  <a href="#">Digital Marketing</a> / <a href="#">John</a> / 22 September 2017
+                </p>
+                <p>Sed sed elementum diam. Nunc vehicula leo et ante dapibus tincidunt. Praesent fringilla mauris gravida enim laoreet, eu cursus erat dignissim. Praesent lacinia, nisi in suscipit commodo...</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- contact us -->
+
+          <section>
+            <div class="contact-section">
+                <h2>Contact Us</h2>
+                <hr />
+                <p>Donec sit amet commodo arcu. Sed sit amet iaculis mi, vel fermentum nisi. Morbi dui enim, vestibulum non accumsan ac, tempor non nisl.</p>
+                <a href="#" class="contact-btn">Send Us a Message</a>
+            </div>
+          </section>
+
+          <!-- google map -->
+
+          <section class="googlemap">
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1155.27041906946!2d3.167708817333622!3d44.85770024711681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1729242166928!5m2!1sfr!2sfr" width="1235" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </section>
+          
     </main>
+
+    <footer>
+        <div class="footer-container">
+          <div class="footer-section">
+            <h1 class="footer-logo"><span class="highlight">T</span>inker</h1>
+            <p>Copyright © 2017 Your Company | Design: <a href="https://templatemo.com">templatemo</a></p>
+          </div>
+          <div class="footer-section">
+            <h4>Location</h4>
+            <p>30 Raffles Ave,<br>Singapore 039803</p>
+            <p>1 Republic Blvd,<br>Singapore 038975</p>
+          </div>
+          <div class="footer-section">
+            <h4>More Info</h4>
+            <p>Phone: 010-020-0340</p>
+            <p>Email: <a href="mailto:tk@company.co">tk@company.co</a></p>
+          </div>
+          <div class="footer-section social-icons">
+            <h4>Get Social With Us</h4>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fas fa-rss"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+          </div>
+        </div>
+      </footer>
+      
+      <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
 </body>
 </html>

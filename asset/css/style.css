@@ -235,7 +235,7 @@ p {
 .gallery-section .gallery-grid {
   width: 70%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
 .gallery-section .gallery-grid img {
@@ -243,6 +243,19 @@ p {
   height: auto;
   object-fit: cover;
   border-radius: 5px;
+  margin-left: 50px;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+.gallery-section .gallery-grid img:hover {
+  transform: scale(1.1);
+}
+
+.gallery-part {
+  background-color: white;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  margin-right: -50px;
 }
 
 @media (max-width: 1024px) {
@@ -257,10 +270,287 @@ p {
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
   }
+  .gallery-part {
+    margin-left: -50px;
+  }
 }
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+}
+.carousel-container {
+  background-color: #f4b342;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.carousel {
+  position: relative;
+  width: 600px;
+  text-align: center;
+}
+
+.carousel-item {
+  display: none;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item.active {
+  display: block;
+}
+.carousel-item.active p {
+  color: black;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.carousel-mention {
+  margin-top: 10px;
+  color: white;
+}
+
+.blog-section {
+  display: flex;
+  justify-content: space-between;
+  background: url("../img/blog-bg.jpg") no-repeat center center/cover;
+  padding: 20px;
+}
+.blog-section .blog-posts {
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-left: -19px;
+}
+.blog-section .blog-posts h2 {
+  padding-top: 20px;
+  margin-left: 15px;
+  color: white;
+  margin-bottom: 20px;
+}
+.blog-section .blog-posts hr {
+  width: 80%;
+  margin: 10px auto;
+  margin-left: -10px;
+  border: 0;
+  border-top: 2px solid white;
+}
+.blog-section .blog-posts h3 {
+  margin-left: 15px;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.blog-section .blog-posts ul {
+  list-style: none;
+  padding: 0;
+}
+.blog-section .blog-posts ul li {
+  margin-left: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.blog-section .blog-posts ul li a {
+  background-color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
+.blog-section .blog-posts ul li a:hover {
+  color: #FFC107;
+}
+.blog-section .blog-content {
+  width: 65%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+.blog-section .blog-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.blog-section .blog-content .blog-info h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+.blog-section .blog-content .blog-info .meta {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 15px;
+}
+.blog-section .blog-content .blog-info .meta a {
+  text-decoration: none;
+  color: #007bff;
+}
+.blog-section .blog-content .blog-info .meta a:hover {
+  text-decoration: underline;
+}
+.blog-section .blog-content .blog-info p {
+  font-size: 1rem;
+  color: #555;
+}
+@media (max-width: 768px) {
+  .blog-section .blog-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .blog-section .blog-posts,
+  .blog-section .blog-content {
+    width: 100%;
+    margin-left: 0;
+  }
+  .blog-section .blog-posts {
+    margin-bottom: 20px;
+  }
+  .blog-section .blog-content {
+    padding: 15px;
+  }
+  .blog-section .blog-posts h2,
+  .blog-section .blog-posts h3 {
+    margin-left: 0;
+    text-align: center;
+  }
+  .blog-section .blog-posts ul li {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+.contact-section {
+  background-color: #4d4d4d;
+  text-align: center;
+  padding: 40px 0;
+}
+.contact-section h2 {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.contact-section hr {
+  border-top: 2px solid #888;
+}
+.contact-section p {
+  font-size: 16px;
+  color: #d9d9d9;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+.contact-section .contact-btn {
+  display: inline-block;
+  background-color: #5cd1e5;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.contact-section .contact-btn:hover {
+  background-color: #FFC107;
+}
+
+.googlemap .map-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.googlemap .map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media (max-width: 768px) {
+  .googlemap .map-container {
+    padding-bottom: 75%;
+  }
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  font-size: 14px;
+  text-align: center;
+}
+footer .footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .footer-container .footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+footer .footer-container .footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+footer .footer-container .footer-section p {
+  margin: 5px 0;
+}
+footer .footer-container .footer-section a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+footer .footer-container .footer-section a:hover {
+  text-decoration: underline;
+}
+footer .footer-container .footer-section .footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+footer .footer-container .footer-section .footer-logo .highlight {
+  color: #ffcc00;
+}
+footer .footer-container .social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 20px;
+}
+footer .footer-container .social-icons a:hover {
+  color: #ffcc00;
+}
+@media (max-width: 768px) {
+  footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .footer-section {
+    text-align: center;
   }
 }
 
